@@ -1,0 +1,46 @@
+[package]
+name = "ihurl"
+version = "0.0.0"
+description = "A UI for Hurl"
+authors = ["Silen Locatelli"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta", default-features = false, features = [
+] }
+
+[dependencies]
+tauri = { version = "2.0.0-beta", default-features = false, features = [] }
+serde = { version = "1", default-features = false }
+serde_json = "1"
+serde_derive = "1.0.203"
+tauri-plugin-dialog = "2.0.0-beta.10"
+tauri-plugin-store = "2.0.0-beta.9"
+tauri-plugin-os = "2.0.0-beta.7"
+tauri-plugin-process = "2.0.0-beta.7"
+tauri-plugin-fs = "2.0.0-beta.10"
+tauri-plugin-http = { version = "2.0.0-beta.11", default-features = false }
+tauri-plugin-clipboard-manager = "2.1.0-beta.0"
+tauri-plugin-shell = "2.0.0-beta.8"
+log = "0.4.21"
+reqwest = { version = "0.12.4", features = ["blocking"] }
+anyhow = "1.0.86"
+thiserror = "1.0.61"
+chrono = "*"
+
+hurl_core = "4.3.0"
+hurl = "4.3.0"
+hurlfmt = "4.3.0"
+
+[dependencies.uuid]
+version = "1.8.0"
+features = [
+    "v4",                
+    "fast-rng",         
+    "macro-diagnostics",
+    "serde"
+]
+
+[features]
+# This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
+custom-protocol = ["tauri/custom-protocol"]
